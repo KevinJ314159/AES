@@ -1,0 +1,89 @@
+*design* DebussyLib (btIdent Verdi_O-2018.09-SP2)
+Command arguments:
+    +define+verilog
+    -2001
+    -f vcs.args
+        +libext+.v
+        +v2k
+        +acc
+        +define+DUMP_FSDB
+        -y ../../rtl
+        -work
+        work
+        +incdir+../../bench
+        ../bench/wb_tb.v
+        ../bench/wb_mast_model.v
+        ../../lib/SAED32_EDK/lib/io_std/verilog/saed32nm_io_wb.v
+        +incdir+../../rtl
+        ../rtl/aes_cipher_top.v
+        ../rtl/aes_sbox.v
+        ../rtl/aes_rcon.v
+        ../rtl/aes_key_expand_128.v
+        ../rtl/aes_top.v
+        ../rtl/aes_ASIC.v
+
+Highest level modules:
+wb_tb
+A1825
+AR1825
+AVDD_NS
+AVDD_EW
+AVSS_NS
+AVSS_EW
+B12I1025_NS
+B12I1025_EW
+B12ISH1025_NS
+B12ISH1025_EW
+B16I1025_NS
+B16I1025_EW
+B16ISH1025_NS
+B16ISH1025_EW
+B4I1025_NS
+B4I1025_EW
+B4ISH1025_NS
+B4ISH1025_EW
+B8I1025_NS
+B8I1025_EW
+B8ISH1025_NS
+B8ISH1025_EW
+BONDPAD
+BREAKCORE
+BREAKIO
+CAPCORNER
+CIOVDDIOVSS_NS
+CIOVDDIOVSS_EW
+CORNER
+CVDDVSS_NS
+CVDDVSS_EW
+D12I1025_EW
+D16I1025_NS
+D16I1025_EW
+D4I1025_NS
+D4I1025_EW
+D8I1025_NS
+D8I1025_EW
+DIOVSSVSS
+FILLER
+FILLER01
+FILLER1
+FILLER10
+FILLER15
+FILLER20
+FILLER35
+FILLER40
+FILLER5
+FILLER50
+I1025_NS
+IOVDD_NS
+IOVDD_EW
+IOVSS_NS
+IOVSS_EW
+ISH1025_NS
+ISH1025_EW
+VDD_NS
+VDD_EW
+VSS_NS
+VSS_EW
+INPUT_BUFFER
+
+Total	0 error(s),   0 warning(s)

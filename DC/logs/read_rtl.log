@@ -1,0 +1,585 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version T-2022.03-SP2 for linux64 - May 25, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Error: Cannot find library file named 'saed32hvt_tt1p05v25c.db'. (TIM-120)
+Error: Cannot find library file named 'saed32rvt_tt1p05v25c.db'. (TIM-120)
+Error: Cannot find library file named 'saed32io_fc_tt1p05v25c_2p5v.db'. (TIM-120)
+#***************************************************
+date
+Fri Dec  5 01:24:21 2025
+#****************************************************
+set exit_switch 	[getenv exit_switch]
+true
+set TOP_MODULE  aes_ASIC
+aes_ASIC
+set_svf ${svfDir}/${TOP_MODULE}.svf
+1
+define_design_lib WORK -path WORK
+1
+analyze -format verilog -lib WORK  [sh ls $topDir/*.v]
+Running PRESTO HDLC
+Compiling source file ../aes_ASIC/rtl/aes_ASIC.v
+Compiling source file ../aes_ASIC/rtl/aes_cipher_top.v
+Compiling source file ../aes_ASIC/rtl/aes_key_expand_128.v
+Compiling source file ../aes_ASIC/rtl/aes_rcon.v
+Compiling source file ../aes_ASIC/rtl/aes_sbox.v
+Compiling source file ../aes_ASIC/rtl/aes_top.v
+Compiling source file ../aes_ASIC/rtl/timescale.v
+Presto compilation completed successfully.
+Warning: Can't read link_library file 'saed32hvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32rvt_tt1p05v25c.db'. (UID-3)
+Loading db file '/usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/dw_foundation.sldb'
+Warning: Can't read link_library file 'saed32io_fc_tt1p05v25c_2p5v.db'. (UID-3)
+1
+elaborate $TOP_MODULE
+Loading db file '/usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/gtech.db'
+Loading db file '/usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Warning: Can't read link_library file 'saed32hvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32rvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32io_fc_tt1p05v25c_2p5v.db'. (UID-3)
+Running PRESTO HDLC
+Presto compilation completed successfully. (aes_ASIC)
+Elaborated 1 design.
+Current design is now 'aes_ASIC'.
+Warning: Can't read link_library file 'saed32hvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32rvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32io_fc_tt1p05v25c_2p5v.db'. (UID-3)
+Information: Building the design 'I1025_EW'. (HDL-193)
+Warning: Cannot find the design 'I1025_EW' in the library 'WORK'. (LBR-1)
+Information: Building the design 'D12I1025_NS'. (HDL-193)
+Warning: Cannot find the design 'D12I1025_NS' in the library 'WORK'. (LBR-1)
+Information: Building the design 'aes_top'. (HDL-193)
+
+Statistics for case statements in always block at line 51 in file
+	'../aes_ASIC/rtl/aes_top.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            54            |    auto/auto     |
+|            86            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine aes_top line 41 in file
+		'../aes_ASIC/rtl/aes_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    wb_ack_o_reg     | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_top line 51 in file
+		'../aes_ASIC/rtl/aes_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    wb_dat_o_reg     | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+|     text_in_reg     | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+|       key_reg       | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_top line 145 in file
+		'../aes_ASIC/rtl/aes_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     done_r_reg      | Flip-flop |   1   |  N  | N  | N  | N  | Y  | Y  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_top line 163 in file
+		'../aes_ASIC/rtl/aes_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |  128  |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (aes_top)
+Information: Building the design 'aes_cipher_top'. (HDL-193)
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 105 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      dcnt_reg       | Flip-flop |   3   |  Y  | N  | N  | N  | Y  | Y  | N  |
+|      dcnt_reg       | Flip-flop |   1   |  N  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 113 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      done_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 114 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_in_r_reg    | Flip-flop |  128  |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 115 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      ld_r_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 122 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa33_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 123 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa23_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 124 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa13_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 125 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa03_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 126 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa32_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 127 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa22_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 128 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa12_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 129 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa02_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 130 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa31_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 131 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa21_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 132 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa11_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 133 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa01_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 134 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa30_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 135 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa20_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 136 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa10_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 137 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      sa00_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 186 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 187 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 188 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 189 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 190 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 191 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 192 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 193 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 194 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 195 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 196 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 197 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 198 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 199 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 200 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_cipher_top line 201 in file
+		'../aes_ASIC/rtl/aes_cipher_top.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    text_out_reg     | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (aes_cipher_top)
+Information: Building the design 'aes_key_expand_128'. (HDL-193)
+
+Inferred memory devices in process
+	in routine aes_key_expand_128 line 75 in file
+		'../aes_ASIC/rtl/aes_key_expand_128.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        w_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_key_expand_128 line 76 in file
+		'../aes_ASIC/rtl/aes_key_expand_128.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        w_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_key_expand_128 line 77 in file
+		'../aes_ASIC/rtl/aes_key_expand_128.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        w_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_key_expand_128 line 78 in file
+		'../aes_ASIC/rtl/aes_key_expand_128.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        w_reg        | Flip-flop |  32   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (aes_key_expand_128)
+Information: Building the design 'aes_sbox'. (HDL-193)
+
+Statistics for case statements in always block at line 66 in file
+	'../aes_ASIC/rtl/aes_sbox.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            67            |    user/user     |
+===============================================
+Presto compilation completed successfully. (aes_sbox)
+Information: Building the design 'aes_rcon'. (HDL-193)
+
+Statistics for case statements in always block at line 66 in file
+	'../aes_ASIC/rtl/aes_rcon.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            77            |    auto/user     |
+===============================================
+
+Inferred memory devices in process
+	in routine aes_rcon line 66 in file
+		'../aes_ASIC/rtl/aes_rcon.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       out_reg       | Flip-flop |   7   |  Y  | N  | N  | N  | Y  | N  | N  |
+|       out_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | Y  | N  |
+|       out_reg       | Flip-flop |  24   |  Y  | N  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine aes_rcon line 71 in file
+		'../aes_ASIC/rtl/aes_rcon.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      rcnt_reg       | Flip-flop |   4   |  Y  | N  | N  | N  | Y  | N  | N  |
+===============================================================================
+Information:  Complex logic will not be considered for set/reset inference. (ELAB-2008)
+Presto compilation completed successfully. (aes_rcon)
+Warning: Design 'aes_ASIC' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+1
+current_design $TOP_MODULE	
+Current design is 'aes_ASIC'.
+{aes_ASIC}
+link
+Warning: Can't read link_library file 'saed32hvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32rvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32io_fc_tt1p05v25c_2p5v.db'. (UID-3)
+
+  Linking design 'aes_ASIC'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (6 designs)               /home/host/Downloads/AES_ASIC/DC/aes_ASIC.db, etc
+  dw_foundation.sldb (library) /usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/dw_foundation.sldb
+
+Information: Building the design 'I1025_EW'. (HDL-193)
+Warning: Cannot find the design 'I1025_EW' in the library 'WORK'. (LBR-1)
+Information: Building the design 'D12I1025_NS'. (HDL-193)
+Warning: Cannot find the design 'D12I1025_NS' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'I1025_EW' in 'aes_ASIC'. (LINK-5)
+Warning: Unable to resolve reference 'D12I1025_NS' in 'aes_ASIC'. (LINK-5)
+0
+if { [link] == 0 } {
+	echo "Linking Error when deal with $TOP_MODULE"
+	exit;
+}
+Warning: Can't read link_library file 'saed32hvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32rvt_tt1p05v25c.db'. (UID-3)
+Warning: Can't read link_library file 'saed32io_fc_tt1p05v25c_2p5v.db'. (UID-3)
+
+  Linking design 'aes_ASIC'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (6 designs)               /home/host/Downloads/AES_ASIC/DC/aes_ASIC.db, etc
+  dw_foundation.sldb (library) /usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/dw_foundation.sldb
+
+Information: Building the design 'I1025_EW'. (HDL-193)
+Warning: Cannot find the design 'I1025_EW' in the library 'WORK'. (LBR-1)
+Information: Building the design 'D12I1025_NS'. (HDL-193)
+Warning: Cannot find the design 'D12I1025_NS' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'I1025_EW' in 'aes_ASIC'. (LINK-5)
+Warning: Unable to resolve reference 'D12I1025_NS' in 'aes_ASIC'. (LINK-5)
+Linking Error when deal with aes_ASIC
+
+Memory usage for this session 115 Mbytes.
+Memory usage for this session including child processes 115 Mbytes.
+CPU usage for this session 2 seconds ( 0.00 hours ).
+Elapsed time for this session 7 seconds ( 0.00 hours ).
+
+Thank you...

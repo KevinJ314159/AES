@@ -1,0 +1,6 @@
+/usr/Synopsys/fm/T-2022.03/linux64/fm/bin/fm_shell_exec -r /usr/Synopsys/fm/T-2022.03 
+
+Version    = T-2022.03
+Build      = T-2022.03-formality_t2022.03_rel-7507169
+Build date = Feb 24, 2022
+Run date   = Thu Dec  4 15:32:19 2025 CST

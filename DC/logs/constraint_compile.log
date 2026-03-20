@@ -1,0 +1,408 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version T-2022.03-SP2 for linux64 - May 25, 2022 
+
+                    Copyright (c) 1988 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+Initializing...
+Error: Cannot find library file named 'saed32hvt_tt1p05v25c.db'. (TIM-120)
+Error: Cannot find library file named 'saed32rvt_tt1p05v25c.db'. (TIM-120)
+Error: Cannot find library file named 'saed32io_fc_tt1p05v25c_2p5v.db'. (TIM-120)
+#****************************************************
+#Note: 	clocks and reset signals were assumed as ideal
+#****************************************************
+#****************************************************
+#MAX freq : 125M
+set SYS_CLK_PERIOD 60.0
+60.0
+#****************************************************
+#****************************************************
+date
+Fri Dec  5 01:22:34 2025
+#****************************************************
+set fix_hold_switch 	[getenv fix_hold_switch]
+true
+set exit_switch 	[getenv exit_switch]
+true
+set area_switch  	[getenv area_switch]
+false
+set power_switch  	[getenv power_switch]
+false
+set ultra_switch 	[getenv ultra_switch]
+false
+set high_switch  	[getenv high_switch]
+true
+set remove_tie_dont_use_switch [getenv remove_tie_dont_use_switch]
+true
+# Define some variables for design -- {aes_ASIC}
+#****************************************************
+set TOP_MODULE		aes_ASIC
+aes_ASIC
+set Rst_list		[list PAD_wb_rst_i]
+PAD_wb_rst_i
+set Clk_list		[list PAD_wb_clk_i]
+PAD_wb_clk_i
+set_svf 	${svfDir}/${TOP_MODULE}.svf
+1
+#Read saved unmapped ddc file
+read_ddc  ${netlistDir}/${TOP_MODULE}_unmapped.ddc
+Loading db file '/usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/dw_foundation.sldb'
+Loading db file '/usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/gtech.db'
+Loading db file '/usr/Synopsys/syn/T-2022.03-SP2/libraries/syn/standard.sldb'
+  Loading link library 'gtech'
+Error: Cannot read file '/home/host/Downloads/AES_ASIC/DC/netlist/aes_ASIC_unmapped.ddc'. (UID-58)
+#****************************************************
+# Define The Design Enviroment
+#****************************************************
+set_operating_conditions -analysis_type bc_wc -min ff1p16v25c  -max tt1p05v25c
+Error: Current design is not defined. (UID-4)
+0
+set_wire_load_mode  "segmented"
+Error: Current design is not defined. (UID-4)
+0
+#set auto_wire_load_selection false
+set_wire_load_model -name 16000  -library saed32hvt_tt1p05v25c
+Error: Current design is not defined. (UID-4)
+0
+# remove dont_use attribute
+#****************************************************
+#if { $remove_tie_dont_use_switch == "true" } {
+#set_attribute  [get_lib_cells saed32rvt_dlvl_ff0p85v125c_i0p85v/TIE*] dont_touch false
+#	set_attribute  [get_lib_cells smic18_tt/TIE*] dont_touch false
+#set_attribute  [get_lib_cells saed32rvt_dlvl_ss0p75v125c_i0p75v/TIE*] dont_touch false
+#set_attribute  [get_lib_cells saed32rvt_dlvl_ff0p85v125c_i0p85v/TIE*] dont_use false
+#	set_attribute  [get_lib_cells smic18_tt/TIE*] dont_use false
+#set_attribute  [get_lib_cells saed32rvt_dlvl_ss0p75v125c_i0p75v/TIE*] dont_use false
+#}
+#****************************************************
+# List of dont use cells. Avoiding scan and jk flip-flops, latches
+#****************************************************
+if 1 {
+
+ set_dont_use saed32hvt_tt1p05v25c/SDFF*
+ set_dont_use saed32rvt_tt1p05v25c/SDFF*
+
+
+}
+Error: Can't find objects matching 'saed32hvt_tt1p05v25c/SDFF*'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+Error: Can't find objects matching 'saed32rvt_tt1p05v25c/SDFF*'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+#****************************************************
+# clock defination and reset
+#****************************************************
+#MAX freq : 125M
+#physical clock and reset
+current_design $TOP_MODULE
+Error: Can't find design 'aes_ASIC'. (UID-109)
+Error: Current design is not defined. (UID-4)
+#should use pins? Can PAD_* be used?
+create_clock -name wb_clk -period $SYS_CLK_PERIOD -waveform [list 0 [expr $SYS_CLK_PERIOD /2]]  [get_ports PAD_wb_clk_i]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_clk_i'. (UID-109)
+Error: Value for list 'source_objects' must have 1 elements. (CMD-036)
+0
+set_dont_touch_network  [all_clocks]
+Error: Current design is not defined. (UID-4)
+Error: Value for list '<object_list>' must have 1 elements. (CMD-036)
+0
+#wb_clk
+set_ideal_network [get_pins "wb_clk_i_0/DOUT"]
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'wb_clk_i_0/DOUT'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_dont_touch_network  [get_ports "$Rst_list"]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_rst_i'. (UID-109)
+Error: Value for list '<object_list>' must have 1 elements. (CMD-036)
+0
+set_ideal_network [get_ports "$Rst_list"]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_rst_i'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+#****************************************************
+# clock constraints
+#****************************************************
+set_clock_latency	0.8	[all_clocks]
+Error: Current design is not defined. (UID-4)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_clock_uncertainty	0.3	[all_clocks]
+Error: Current design is not defined. (UID-4)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_clock_transition    0.3     [all_clocks]
+Error: Current design is not defined. (UID-4)
+Error: Value for list 'clock_list' must have 1 elements. (CMD-036)
+0
+report_clocks -nosplit >  ${reportsDir}/${TOP_MODULE}.clocks.txt
+#****************************************************
+# drive and load, max_fanout,max_capacitance
+#****************************************************
+set MAX_LOAD	[ load_of saed32hvt_tt1p05v25c/AND3X2_HVT/A1 ]
+Error: Can't find lib_pin 'saed32hvt_tt1p05v25c/AND3X2_HVT/A1'. (UID-109)
+Error: Value for list '<library_cell_pin>' must have 1 elements. (CMD-036)
+0
+set_drive 0	[get_ports "$Rst_list"]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_rst_i'. (UID-109)
+Error: Value for list 'port_list' must have 1 elements. (CMD-036)
+0
+set_drive 0 	[get_ports "$Clk_list"]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_clk_i'. (UID-109)
+Error: Value for list 'port_list' must have 1 elements. (CMD-036)
+0
+set_driving_cell -lib_cell I1025_EW [remove_from_collection [all_inputs] \
+         [get_ports [list PAD_wb_clk_i PAD_wb_rst_i]]]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_clk_i'. (UID-109)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_rst_i'. (UID-109)
+Error: Value for list 'port_list' must have 1 elements. (CMD-036)
+0
+set_load [expr $MAX_LOAD*15] [all_outputs]
+Error: Current design is not defined. (UID-4)
+Error: Value for list 'objects' must have 1 elements. (CMD-036)
+0
+set_max_capacitance [expr $MAX_LOAD*12] [get_designs *]
+Error: Can't find designs matching '*'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_max_fanout 10 [all_inputs]
+Error: Current design is not defined. (UID-4)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+set_max_transition 1.0 $TOP_MODULE
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'aes_ASIC'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+#****************************************************
+# input delay and output delay
+# input delay and output delay were set to 50% clock period
+#****************************************************
+#should use -max and -min
+#define ports (exclude *clk ports)
+#jtag ports; use set_case_analysis?
+#input delay : max : period - setup
+#input delay : min : hold
+#output delay : max : setup
+#output delay : min : -hold
+set wb_in_ports [remove_from_collection [all_inputs]  [get_ports [list PAD_wb_clk_i PAD_wb_rst_i]]]
+Error: Current design is not defined. (UID-4)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_clk_i'. (UID-109)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_rst_i'. (UID-109)
+set wb_out_ports [get_ports [list PAD_wb_dat_o PAD_wb_ack_o]]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_dat_o'. (UID-109)
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_ack_o'. (UID-109)
+set_input_delay -max 5 -clock wb_clk $wb_in_ports
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'wb_clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_input_delay -min 0.1 -clock wb_clk $wb_in_ports
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'wb_clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_output_delay -max 5 -clock wb_clk $wb_out_ports
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'wb_clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+set_output_delay -min -1 -clock wb_clk $wb_out_ports
+Error: Current design is not defined. (UID-4)
+Error: Can't find clock 'wb_clk'. (UID-109)
+Error: Value for list '-clock' must have 1 elements. (CMD-036)
+Error: Value for list 'port_pin_list' must have 1 elements. (CMD-036)
+0
+#exit
+#****************************************************
+# false path
+#****************************************************
+#set_case_analysis is enough?
+set_false_path -from [get_ports "$Rst_list"]
+Error: Current design is not defined. (UID-4)
+Error: Can't find port 'PAD_wb_rst_i'. (UID-109)
+Error: Value for list '-from' must have 1 elements. (CMD-036)
+0
+#****************************************************
+# case_analysis
+#****************************************************
+set_case_analysis 0 [get_pins "wb_rst_i_0/DOUT"]
+Error: Current design is not defined. (UID-4)
+Error: Can't find object 'wb_rst_i_0/DOUT'. (UID-109)
+Error: Value for list 'port_or_pin_list' must have 1 elements. (CMD-036)
+0
+#****************************************************
+# area and power
+set_max_area     0   
+Error: Current design is not defined. (UID-4)
+0
+}
+Error: extra characters after close-brace
+	Use error_info for more info. (CMD-013)
+if { $power_switch == "true" } {
+	set_max_total_power 0 uw
+}
+#****************************************************
+# don't touch
+#****************************************************
+set_dont_touch        [get_cells wb_* ]
+Error: Current design is not defined. (UID-4)
+Error: Can't find objects matching 'wb_*'. (UID-109)
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+0
+#****************************************************
+#  Map and Optimize the design
+#****************************************************
+check_design
+Error: Current design is not defined. (UID-4)
+0
+#compile
+#avoid "assign"
+set verilogout_no_tri true
+true
+set verilogout_equation false
+false
+#dxzhang:should be used only once
+set_fix_multiple_port_nets -buffer_constants -all
+Error: Current design is not defined. (UID-4)
+0
+#compile  -map_effort high -boundary_optimization
+#compile  -map_effort medium -boundary_optimization
+if {$ultra_switch == "true"} {
+	set_ultra_optimization true -force
+	}
+if {$high_switch == "true"} {
+	compile -map_effort high -boundary_optimization
+} else {
+	compile -map_effort medium -boundary_optimization
+	}
+Error: Current design is not defined. (UID-4)
+0
+#****************************************************
+#  fix_hold_time
+#****************************************************
+if {$fix_hold_switch == "true"} {
+        set_fix_hold [get_clocks *]
+        compile -incremental -only_hold_time
+}	
+Error: Current design is not defined. (UID-4)
+Error: Can't find clocks matching '*'. (UID-109)
+Error: Value for list '<clock_list>' must have 1 elements. (CMD-036)
+Error: Current design is not defined. (UID-4)
+0
+check_design  >  ${reportsDir}/${TOP_MODULE}.check_design.txt
+check_timing  >  ${reportsDir}/${TOP_MODULE}.check_timing.txt
+#****************************************************
+#  Output Reports
+#****************************************************
+report_design -nosplit >  ${reportsDir}/${TOP_MODULE}.design.txt
+report_port -nosplit >  ${reportsDir}/${TOP_MODULE}.port.txt
+report_net -nosplit >  ${reportsDir}/${TOP_MODULE}.net.txt
+report_timing_requirements -nosplit >  ${reportsDir}/${TOP_MODULE}.timing_requirements.txt
+report_constraint -nosplit -all_violators >  ${reportsDir}/${TOP_MODULE}.constraint.txt
+# -delay max :setup , -delay min : hold time
+report_timing -nosplit >  ${reportsDir}/${TOP_MODULE}.timing.txt
+report_area -nosplit >  ${reportsDir}/${TOP_MODULE}.area.txt
+report_power -nosplit > ${reportsDir}/${TOP_MODULE}.power.txt
+report_timing -to [all_registers -data_pins] > ${reportsDir}/${TOP_MODULE}.timing.regist,txt
+Error: Current design is not defined. (UID-4)
+report_timing -to [all_outputs]  > ${reportsDir}/${TOP_MODULE}.timing.all_out.txt
+Error: Current design is not defined. (UID-4)
+#****************************************************
+#  Change Naming Rule
+#****************************************************
+remove_unconnected_ports -blast_buses [find -hierarchy cell {"*"}]
+Error: Current design is not defined. (UID-4)
+Error: Can't find objects matching '*'. (UID-109)
+Error: Value for list 'cell_list' must have 1 elements. (CMD-036)
+0
+set bus_inference_style {%s[%d]}
+%s[%d]
+set bus_naming_style {%s[%d]}
+%s[%d]
+set hdlout_internal_busses true
+true
+change_names -hierarchy -rule verilog
+Error: Current design is not defined. (UID-4)
+0
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+1
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+1
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+1
+define_name_rules name_rule -case_insensitive -remove_internal_net_bus -equal_ports_nets
+1
+change_names -hierarchy -rules name_rule
+Error: Current design is not defined. (UID-4)
+0
+###########################
+#****************************************************
+#  Output Results
+#****************************************************
+write -format verilog   -hierarchy      -output  ${netlistDir}/${TOP_MODULE}.vg
+Error: No files or designs were specified. (UID-22)
+0
+write -format ddc -hierarchy -output ${netlistDir}/${TOP_MODULE}.ddc
+Error: No files or designs were specified. (UID-22)
+0
+write_sdf  ${netlistDir}/${TOP_MODULE}_post_dc.sdf
+Error: Current design is not defined. (UID-4)
+0
+write_sdc  -nosplit ${netlistDir}/${TOP_MODULE}.sdc
+Error: Current design is not defined. (UID-4)
+0
+date
+Fri Dec  5 01:22:34 2025
+#****************************************************
+#  Finish and Quit
+#****************************************************
+if {$exit_switch == "true"} {
+exit
+}
+
+Memory usage for this session 84 Mbytes.
+Memory usage for this session including child processes 84 Mbytes.
+CPU usage for this session 1 seconds ( 0.00 hours ).
+Elapsed time for this session 12 seconds ( 0.00 hours ).
+
+Thank you...

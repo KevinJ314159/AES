@@ -1,0 +1,34 @@
+date
+set TOP_MODULE aes_ASIC
+set	search_path	"$search_path  $topDir "
+#Guidance
+set 	synopsys_auto_setup 	true
+set_svf ${svfDir}/${TOP_MODULE}.svf
+
+
+read_db " lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_tt1p05v25c.db  lib/SAED32_EDK/lib/io_std/db_nldm/saed32io_fc_tt1p05v25c_2p5v.db    lib/SAED32_EDK/lib/stdcell_rvt/db_nldm/saed32rvt_tt1p05v25c.db   " 
+
+read_verilog -r [sh ls $topDir/*.v]
+set_top ${TOP_MODULE}
+
+
+
+read_verilog -i netlist/${TOP_MODULE}.vg
+set_top ${TOP_MODULE}
+
+report_container
+
+match
+report_matched_points
+
+if [ verify ] {
+	date
+	exit
+} else {
+  	diagnose
+        report_unmatched
+        report_failing
+        report_error_candidates
+}
+
+date

@@ -1,0 +1,9 @@
+/home/ICer/AES_ASIC/aes_ASIC/bench/wb_mast_model.v
+/home/ICer/AES_ASIC/aes_ASIC/bench/wb_tb.v
+/home/ICer/AES_ASIC/aes_ASIC/rtl/aes_ASIC.v
+/home/ICer/AES_ASIC/aes_ASIC/rtl/aes_cipher_top.v
+/home/ICer/AES_ASIC/aes_ASIC/rtl/aes_key_expand_128.v
+/home/ICer/AES_ASIC/aes_ASIC/rtl/aes_rcon.v
+/home/ICer/AES_ASIC/aes_ASIC/rtl/aes_sbox.v
+/home/ICer/AES_ASIC/aes_ASIC/rtl/aes_top.v
+/home/ICer/AES_ASIC/lib/SAED32_EDK/lib/io_std/verilog/saed32nm_io_wb.v

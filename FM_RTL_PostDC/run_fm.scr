@@ -1,0 +1,6 @@
+#!/bin/sh
+
+mkdir -p logs
+
+fm_shell -f aes_ASIC.fms 	| tee -i logs/aes_ASIC.log
+
