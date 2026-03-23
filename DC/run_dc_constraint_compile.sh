@@ -12,9 +12,9 @@ export ultra_switch=false
 
 export high_switch=true
 export area_switch=false
-export power_switch=false
+export power_switch=true
 export fix_hold_switch=true
-export exit_switch=true
+export exit_switch=false
 export remove_tie_dont_use_switch=true
 
 dc_shell-xg-t -f ./scripts/constraint_compile.tcl |tee -i logs/constraint_compile.log

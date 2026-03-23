@@ -1,0 +1,9 @@
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/Sbox.v
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/aes_ASIC.v
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/aes_top.v
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/cipher_round.v
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/cipher_top.v
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/key_expand.v
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/saed32nm_io_fc.v
+/home/host/DFT_Project/AES_full_piplined/Full_pipeline/saed32nm_io_wb.v
+/home/host/DFT_Project/AES_full_piplined/tb/tb.v

@@ -1,0 +1,62 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : aes_ASIC_new
+Version: T-2022.03-SP2
+Date   : Mon Mar 23 12:11:33 2026
+****************************************
+
+ # A fanout number of 60 was used for high fanout net computations.
+
+Operating Conditions: tt1p05v25c   Library: saed32hvt_tt1p05v25c
+Wire Load Model Mode: segmented
+
+  Startpoint: PAD_load_mkey
+              (input port clocked by sys_clk)
+  Endpoint: u_aes_top/u_ke/w0_reg_9_
+            (rising edge-triggered flip-flop clocked by sys_clk)
+  Path Group: sys_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_ASIC_new       16000                 saed32hvt_tt1p05v25c
+  key_expand         8000                  saed32hvt_tt1p05v25c
+  aes_top            8000                  saed32hvt_tt1p05v25c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock sys_clk (rise edge)                               0.00       0.00
+  clock network delay (ideal)                             0.80       0.80
+  input external delay                                    5.00       5.80 f
+  PAD_load_mkey (in)                                      0.00       5.80 f
+  U4/Y (NBUFFX32_RVT)                                     0.44       6.24 f
+  load_mkey_0/DOUT (I1025_EW)                            47.27      53.51 f
+  u_aes_top/load_mkey (aes_top)                           0.00      53.51 f
+  u_aes_top/u_ke/load_mkey (key_expand)                   0.00      53.51 f
+  u_aes_top/u_ke/U24/Y (NAND2X0_HVT)                      0.10      53.62 r
+  u_aes_top/u_ke/U1571/Y (AND2X1_HVT)                     0.12      53.74 r
+  u_aes_top/u_ke/U111/Y (INVX0_HVT)                       0.07      53.81 f
+  u_aes_top/u_ke/U97/Y (INVX0_HVT)                        0.08      53.89 r
+  u_aes_top/u_ke/U34/Y (NBUFFX2_HVT)                      0.10      53.99 r
+  u_aes_top/u_ke/U1359/Y (AO222X1_HVT)                    0.12      54.11 r
+  u_aes_top/u_ke/w0_reg_9_/D (DFFARX2_HVT)                0.01      54.12 r
+  data arrival time                                                 54.12
+
+  clock sys_clk (rise edge)                              60.00      60.00
+  clock network delay (ideal)                             0.80      60.80
+  clock uncertainty                                      -0.30      60.50
+  u_aes_top/u_ke/w0_reg_9_/CLK (DFFARX2_HVT)              0.00      60.50 r
+  library setup time                                     -0.05      60.45
+  data required time                                                60.45
+  --------------------------------------------------------------------------
+  data required time                                                60.45
+  data arrival time                                                -54.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                        6.33
+
+
+1

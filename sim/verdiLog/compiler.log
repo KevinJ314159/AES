@@ -1,0 +1,18 @@
+*design* DebussyLib (btIdent Verdi_T-2022.06)
+Command arguments:
+    +define+verilog
+    -f flist.f
+        ../tb/tb.v
+        ../Full_pipeline/aes_top.v
+        ../Full_pipeline/cipher_round.v
+        ../Full_pipeline/cipher_top.v
+        ../Full_pipeline/key_expand.v
+        ../Full_pipeline/Sbox.v
+    -2001
+    -top
+    aes_top_tb
+
+Highest level modules:
+aes_top_tb
+
+Total	0 error(s),   0 warning(s)

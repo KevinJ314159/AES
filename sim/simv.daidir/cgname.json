@@ -1,0 +1,416 @@
+{
+    "aes_top_tb": [
+        "aes_top_tb",
+        "DE1Pb",
+        "module",
+        1
+    ],
+    "aes_ASIC_new": [
+        "aes_ASIC_new",
+        "Tt2FL",
+        "module",
+        5
+    ],
+    "aes_top": [
+        "aes_top",
+        "xKp10",
+        "module",
+        6
+    ],
+    "encrypt_round_0000": [
+        "encrypt_round_0000",
+        "akDjS",
+        "module",
+        2
+    ],
+    "sbox": [
+        "sbox",
+        "QR1W3",
+        "module",
+        3
+    ],
+    "A1825": [
+        "A1825",
+        "WVp5e",
+        "module",
+        7
+    ],
+    "AR1825": [
+        "AR1825",
+        "DJxJq",
+        "module",
+        8
+    ],
+    "AVDD_NS": [
+        "AVDD_NS",
+        "qxndh",
+        "module",
+        9
+    ],
+    "AVDD_EW": [
+        "AVDD_EW",
+        "BUe7I",
+        "module",
+        10
+    ],
+    "AVSS_NS": [
+        "AVSS_NS",
+        "x2D4Q",
+        "module",
+        11
+    ],
+    "AVSS_EW": [
+        "AVSS_EW",
+        "mBeFP",
+        "module",
+        12
+    ],
+    "B12I1025_NS": [
+        "B12I1025_NS",
+        "p7Nwc",
+        "module",
+        13
+    ],
+    "B12I1025_EW": [
+        "B12I1025_EW",
+        "Kdapf",
+        "module",
+        14
+    ],
+    "B12ISH1025_NS": [
+        "B12ISH1025_NS",
+        "NzkAY",
+        "module",
+        15
+    ],
+    "B12ISH1025_EW": [
+        "B12ISH1025_EW",
+        "CYtvy",
+        "module",
+        16
+    ],
+    "B16I1025_NS": [
+        "B16I1025_NS",
+        "giB0e",
+        "module",
+        17
+    ],
+    "B16I1025_EW": [
+        "B16I1025_EW",
+        "st0D9",
+        "module",
+        18
+    ],
+    "B16ISH1025_NS": [
+        "B16ISH1025_NS",
+        "c1xYf",
+        "module",
+        19
+    ],
+    "B16ISH1025_EW": [
+        "B16ISH1025_EW",
+        "aIpji",
+        "module",
+        20
+    ],
+    "B4I1025_NS": [
+        "B4I1025_NS",
+        "Pa7ry",
+        "module",
+        21
+    ],
+    "B4I1025_EW": [
+        "B4I1025_EW",
+        "epgq0",
+        "module",
+        22
+    ],
+    "B4ISH1025_NS": [
+        "B4ISH1025_NS",
+        "z4ddy",
+        "module",
+        23
+    ],
+    "B4ISH1025_EW": [
+        "B4ISH1025_EW",
+        "HnNJM",
+        "module",
+        24
+    ],
+    "B8I1025_NS": [
+        "B8I1025_NS",
+        "IdbTH",
+        "module",
+        25
+    ],
+    "B8I1025_EW": [
+        "B8I1025_EW",
+        "ikHWa",
+        "module",
+        26
+    ],
+    "B8ISH1025_NS": [
+        "B8ISH1025_NS",
+        "pu3xw",
+        "module",
+        27
+    ],
+    "B8ISH1025_EW": [
+        "B8ISH1025_EW",
+        "StzGu",
+        "module",
+        28
+    ],
+    "BONDPAD": [
+        "BONDPAD",
+        "tahtF",
+        "module",
+        29
+    ],
+    "BREAKCORE": [
+        "BREAKCORE",
+        "PbdKm",
+        "module",
+        30
+    ],
+    "BREAKIO": [
+        "BREAKIO",
+        "qiyM6",
+        "module",
+        31
+    ],
+    "CAPCORNER": [
+        "CAPCORNER",
+        "bgABC",
+        "module",
+        32
+    ],
+    "CIOVDDIOVSS_NS": [
+        "CIOVDDIOVSS_NS",
+        "YdcmU",
+        "module",
+        33
+    ],
+    "CIOVDDIOVSS_EW": [
+        "CIOVDDIOVSS_EW",
+        "e5T9K",
+        "module",
+        34
+    ],
+    "CORNER": [
+        "CORNER",
+        "MfbAj",
+        "module",
+        35
+    ],
+    "CVDDVSS_NS": [
+        "CVDDVSS_NS",
+        "Tn7qm",
+        "module",
+        36
+    ],
+    "CVDDVSS_EW": [
+        "CVDDVSS_EW",
+        "Tf11s",
+        "module",
+        37
+    ],
+    "D12I1025_NS": [
+        "D12I1025_NS",
+        "z4LDy",
+        "module",
+        38
+    ],
+    "D12I1025_EW": [
+        "D12I1025_EW",
+        "TVK80",
+        "module",
+        39
+    ],
+    "D16I1025_NS": [
+        "D16I1025_NS",
+        "tmC7x",
+        "module",
+        40
+    ],
+    "D16I1025_EW": [
+        "D16I1025_EW",
+        "kwEn2",
+        "module",
+        41
+    ],
+    "D4I1025_NS": [
+        "D4I1025_NS",
+        "qwTd5",
+        "module",
+        42
+    ],
+    "D4I1025_EW": [
+        "D4I1025_EW",
+        "ZqLRi",
+        "module",
+        43
+    ],
+    "D8I1025_NS": [
+        "D8I1025_NS",
+        "btgta",
+        "module",
+        44
+    ],
+    "D8I1025_EW": [
+        "D8I1025_EW",
+        "IETpL",
+        "module",
+        45
+    ],
+    "DIOVSSVSS": [
+        "DIOVSSVSS",
+        "NjfFc",
+        "module",
+        46
+    ],
+    "FILLER": [
+        "FILLER",
+        "dAb79",
+        "module",
+        47
+    ],
+    "FILLER01": [
+        "FILLER01",
+        "tmJaU",
+        "module",
+        48
+    ],
+    "FILLER1": [
+        "FILLER1",
+        "N9JGw",
+        "module",
+        49
+    ],
+    "FILLER10": [
+        "FILLER10",
+        "WmNCT",
+        "module",
+        50
+    ],
+    "FILLER15": [
+        "FILLER15",
+        "gaQxh",
+        "module",
+        51
+    ],
+    "FILLER20": [
+        "FILLER20",
+        "aKbgE",
+        "module",
+        52
+    ],
+    "FILLER35": [
+        "FILLER35",
+        "fzf16",
+        "module",
+        53
+    ],
+    "FILLER40": [
+        "FILLER40",
+        "aEU9K",
+        "module",
+        54
+    ],
+    "FILLER5": [
+        "FILLER5",
+        "U4GMw",
+        "module",
+        55
+    ],
+    "FILLER50": [
+        "FILLER50",
+        "GnSAs",
+        "module",
+        56
+    ],
+    "I1025_NS": [
+        "I1025_NS",
+        "r4sFz",
+        "module",
+        57
+    ],
+    "I1025_EW": [
+        "I1025_EW",
+        "sPS38",
+        "module",
+        58
+    ],
+    "IOVDD_NS": [
+        "IOVDD_NS",
+        "Ip9YT",
+        "module",
+        59
+    ],
+    "IOVDD_EW": [
+        "IOVDD_EW",
+        "fcUfA",
+        "module",
+        60
+    ],
+    "IOVSS_NS": [
+        "IOVSS_NS",
+        "pTgGp",
+        "module",
+        61
+    ],
+    "IOVSS_EW": [
+        "IOVSS_EW",
+        "rSCJ7",
+        "module",
+        62
+    ],
+    "ISH1025_NS": [
+        "ISH1025_NS",
+        "MYvqb",
+        "module",
+        63
+    ],
+    "ISH1025_EW": [
+        "ISH1025_EW",
+        "n5n1n",
+        "module",
+        64
+    ],
+    "VDD_NS": [
+        "VDD_NS",
+        "HH8Ux",
+        "module",
+        65
+    ],
+    "VDD_EW": [
+        "VDD_EW",
+        "SwLHL",
+        "module",
+        66
+    ],
+    "VSS_NS": [
+        "VSS_NS",
+        "yNyBp",
+        "module",
+        67
+    ],
+    "VSS_EW": [
+        "VSS_EW",
+        "CWrWU",
+        "module",
+        68
+    ],
+    "INPUT_BUFFER": [
+        "INPUT_BUFFER",
+        "hnp3L",
+        "module",
+        69
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}

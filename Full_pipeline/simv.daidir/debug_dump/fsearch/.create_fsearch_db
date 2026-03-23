@@ -1,0 +1,9 @@
+#!/bin/sh -h 
+PYTHONHOME=/usr/Synopsys/vcs/T-2022.06/etc/search/pyh
+export PYTHONHOME
+PYTHONPATH=/usr/Synopsys/vcs/T-2022.06/linux64/lib/pylib27
+export PYTHONPATH
+LD_LIBRARY_PATH=/usr/Synopsys/vcs/T-2022.06/linux64/lib:/usr/Synopsys/vcs/T-2022.06/linux64/lib/pylib27
+export LD_LIBRARY_PATH
+/usr/Synopsys/vcs/T-2022.06/linux64/bin/vcsfind_create_index.exe  -z  "/home/host/DFT_Project/AES_full_piplined/Full_pipeline/simv.daidir/debug_dump/fsearch/./idents_MBsTWr.xml.gz" "/home/host/DFT_Project/AES_full_piplined/Full_pipeline/simv.daidir/debug_dump/fsearch/./idents_tapi.xml.gz" -o "/home/host/DFT_Project/AES_full_piplined/Full_pipeline/simv.daidir/debug_dump/fsearch/fsearch.db_tmp"
+\mv "/home/host/DFT_Project/AES_full_piplined/Full_pipeline/simv.daidir/debug_dump/fsearch/fsearch.db_tmp" "/home/host/DFT_Project/AES_full_piplined/Full_pipeline/simv.daidir/debug_dump/fsearch/fsearch.db"

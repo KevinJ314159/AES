@@ -4,12 +4,17 @@ date
 
 set exit_switch 	[getenv exit_switch]
 
-set TOP_MODULE  aes_ASIC
+set TOP_MODULE aes_ASIC_new
 set_svf ${svfDir}/${TOP_MODULE}.svf
+
+puts "PWD = [pwd]"
+
+set FLISTDIR "$TOPDIR/../filelist" 
 
 define_design_lib WORK -path WORK
 
-analyze -format verilog -lib WORK  [sh ls $topDir/*.v]
+analyze -format verilog -lib WORK [sh cat $FLISTDIR/rtl.f]
+
 elaborate $TOP_MODULE
 
 current_design $TOP_MODULE	

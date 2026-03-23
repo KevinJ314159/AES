@@ -1,0 +1,62 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : aes_ASIC_new
+Version: T-2022.03-SP2
+Date   : Mon Mar 23 12:11:33 2026
+****************************************
+
+ # A fanout number of 60 was used for high fanout net computations.
+
+Operating Conditions: tt1p05v25c   Library: saed32hvt_tt1p05v25c
+Wire Load Model Mode: segmented
+
+  Startpoint: PAD_din_valid
+              (input port clocked by sys_clk)
+  Endpoint: PAD_busy (output port clocked by sys_clk)
+  Path Group: sys_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes_ASIC_new       16000                 saed32hvt_tt1p05v25c
+  encrypt            8000                  saed32hvt_tt1p05v25c
+  aes_top            8000                  saed32hvt_tt1p05v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock sys_clk (rise edge)                0.00       0.00
+  clock network delay (ideal)              0.80       0.80
+  input external delay                     5.00       5.80 f
+  PAD_din_valid (in)                       0.00       5.80 f
+  U5/Y (NBUFFX32_RVT)                      0.44       6.24 f
+  din_valid_0/DOUT (I1025_EW)             47.27      53.51 f
+  u_aes_top/din_valid (aes_top)            0.00      53.51 f
+  u_aes_top/u_en/din_valid (encrypt)       0.00      53.51 f
+  u_aes_top/u_en/U3/Y (INVX0_HVT)          0.06      53.57 r
+  u_aes_top/u_en/U4/Y (NAND2X0_HVT)        0.06      53.63 f
+  u_aes_top/u_en/busy (encrypt)            0.00      53.63 f
+  u_aes_top/U1/Y (INVX0_HVT)               0.05      53.68 r
+  u_aes_top/U2/Y (NAND2X0_HVT)             0.05      53.73 f
+  u_aes_top/busy (aes_top)                 0.00      53.73 f
+  U2/Y (NBUFFX4_HVT)                       0.10      53.84 f
+  busy_0/PADIO (D12I1025_NS)               1.56      55.40 f
+  PAD_busy (out)                           0.06      55.46 f
+  data arrival time                                  55.46
+
+  clock sys_clk (rise edge)               60.00      60.00
+  clock network delay (ideal)              0.80      60.80
+  clock uncertainty                       -0.30      60.50
+  output external delay                   -5.00      55.50
+  data required time                                 55.50
+  -----------------------------------------------------------
+  data required time                                 55.50
+  data arrival time                                 -55.46
+  -----------------------------------------------------------
+  slack (MET)                                         0.04
+
+
+1

@@ -1,0 +1,195 @@
+Command: vcs -full64 -debug_access+all -line +vcsd +vpi +plusarg_save -Mupdate +error+10 \
++v2k +ntb_exit_on_error=10 -timescale=1ns/100ps -negdelay +neg_tchk +memcbk +sdfverbose \
++warn=all +warn=noTFIPC +nospecify +warn=noWSUM -l vcs.log -f /home/host/DFT_Project/AES_full_piplined/flist.f \
+
+                         Chronologic VCS (TM)
+         Version T-2022.06_Full64 -- Sun Mar 22 15:27:21 2026
+
+                    Copyright (c) 1991 - 2022 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '../tb/tb.v'
+Parsing design file '../Full_pipeline/aes_ASIC.v'
+Parsing design file '../Full_pipeline/aes_top.v'
+Parsing design file '../Full_pipeline/cipher_round.v'
+Parsing design file '../Full_pipeline/cipher_top.v'
+Parsing design file '../Full_pipeline/key_expand.v'
+Parsing design file '../Full_pipeline/Sbox.v'
+Parsing design file '../Full_pipeline/saed32nm_io_wb.v'
+Parsing design file '../Full_pipeline/saed32nm_io_fc.v'
+Top Level Modules:
+       aes_top_tb
+       aes_ASIC_new
+       A1825
+       AR1825
+       AVDD_NS
+       AVDD_EW
+       AVSS_NS
+       AVSS_EW
+       B12I1025_NS
+       B12I1025_EW
+       B12ISH1025_NS
+       B12ISH1025_EW
+       B16I1025_NS
+       B16I1025_EW
+       B16ISH1025_NS
+       B16ISH1025_EW
+       B4I1025_NS
+       B4I1025_EW
+       B4ISH1025_NS
+       B4ISH1025_EW
+       B8I1025_NS
+       B8I1025_EW
+       B8ISH1025_NS
+       B8ISH1025_EW
+       BONDPAD
+       BREAKCORE
+       BREAKIO
+       CAPCORNER
+       CIOVDDIOVSS_NS
+       CIOVDDIOVSS_EW
+       CORNER
+       CVDDVSS_NS
+       CVDDVSS_EW
+       D12I1025_EW
+       D16I1025_NS
+       D16I1025_EW
+       D4I1025_NS
+       D4I1025_EW
+       D8I1025_NS
+       D8I1025_EW
+       DIOVSSVSS
+       FILLER
+       FILLER01
+       FILLER1
+       FILLER10
+       FILLER15
+       FILLER20
+       FILLER35
+       FILLER40
+       FILLER5
+       FILLER50
+       I1025_NS
+       IOVDD_NS
+       IOVDD_EW
+       IOVSS_NS
+       IOVSS_EW
+       ISH1025_NS
+       ISH1025_EW
+       VDD_NS
+       VDD_EW
+       VSS_NS
+       VSS_EW
+       INPUT_BUFFER
+TimeScale is 1 ns / 1 ps
+
+Warning-[IWNF] Implicit wire has no fanin
+../Full_pipeline/saed32nm_io_wb.v, 975
+  Implicit wire 'PULL_DOWN' does not have any driver, please make sure this is
+  intended.
+
+
+Warning-[IWNF] Implicit wire has no fanin
+../Full_pipeline/saed32nm_io_wb.v, 976
+  Implicit wire 'PULL_UP' does not have any driver, please make sure this is 
+  intended.
+
+Notice: Ports coerced to inout, use -notice for details
+Starting vcs inline pass...
+
+68 modules and 0 UDP read.
+recompiling module aes_top_tb
+recompiling module aes_ASIC_new
+recompiling module aes_top
+recompiling module encrypt_round
+recompiling module sbox
+recompiling module A1825
+recompiling module AR1825
+recompiling module AVDD_NS
+recompiling module AVDD_EW
+recompiling module AVSS_NS
+recompiling module AVSS_EW
+recompiling module B12I1025_NS
+recompiling module B12I1025_EW
+recompiling module B12ISH1025_NS
+recompiling module B12ISH1025_EW
+recompiling module B16I1025_NS
+recompiling module B16I1025_EW
+recompiling module B16ISH1025_NS
+recompiling module B16ISH1025_EW
+recompiling module B4I1025_NS
+recompiling module B4I1025_EW
+recompiling module B4ISH1025_NS
+recompiling module B4ISH1025_EW
+recompiling module B8I1025_NS
+recompiling module B8I1025_EW
+recompiling module B8ISH1025_NS
+recompiling module B8ISH1025_EW
+recompiling module BONDPAD
+recompiling module BREAKCORE
+recompiling module BREAKIO
+recompiling module CAPCORNER
+recompiling module CIOVDDIOVSS_NS
+recompiling module CIOVDDIOVSS_EW
+recompiling module CORNER
+recompiling module CVDDVSS_NS
+recompiling module CVDDVSS_EW
+recompiling module D12I1025_NS
+recompiling module D12I1025_EW
+recompiling module D16I1025_NS
+recompiling module D16I1025_EW
+recompiling module D4I1025_NS
+recompiling module D4I1025_EW
+recompiling module D8I1025_NS
+recompiling module D8I1025_EW
+recompiling module DIOVSSVSS
+recompiling module FILLER
+recompiling module FILLER01
+recompiling module FILLER1
+recompiling module FILLER10
+recompiling module FILLER15
+50 of 68 modules done
+recompiling module FILLER20
+recompiling module FILLER35
+recompiling module FILLER40
+recompiling module FILLER5
+recompiling module FILLER50
+recompiling module I1025_NS
+recompiling module I1025_EW
+recompiling module IOVDD_NS
+recompiling module IOVDD_EW
+recompiling module IOVSS_NS
+recompiling module IOVSS_EW
+recompiling module ISH1025_NS
+recompiling module ISH1025_EW
+recompiling module VDD_NS
+recompiling module VDD_EW
+recompiling module VSS_NS
+recompiling module VSS_EW
+recompiling module INPUT_BUFFER
+All of 68 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
+-Wl,-rpath=/usr/Synopsys/vcs/T-2022.06/linux64/lib -L/usr/Synopsys/vcs/T-2022.06/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _70614_archive_1.so \
+SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
+-lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /usr/Synopsys/vcs/T-2022.06/linux64/lib/vcs_tls.o \
+-Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   \
+/usr/Synopsys/vcs/T-2022.06/linux64/lib/vcs_save_restore_new.o /usr/Synopsys/verdi/T-2022.06/share/PLI/VCS/LINUX64/pli.a \
+-ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+CPU time: .647 seconds to compile + .305 seconds to elab + .121 seconds to link

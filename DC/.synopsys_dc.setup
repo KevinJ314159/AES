@@ -10,7 +10,7 @@ set TOPDIR	[sh pwd]
 
 # Define RTL source files directory
 
-set topDir 		"../aes_ASIC/rtl"
+set topDir 		"../RTL"
 
 # Output files directory
 set reportsDir 		"$TOPDIR/reports"
@@ -19,12 +19,12 @@ set svfDir 		"$TOPDIR/svf"
 
 # Design Compile system setting
 set search_path      	". $topDir"
-lappend search_path  	"../lib/SAED32_EDK/lib/io_std/verilog/"
-lappend search_path  	"../lib/SAED32_EDK/lib/io_std/db_nldm/"
-lappend search_path  	"../lib/SAED32_EDK/lib/stdcell_hvt/verilog/"
-lappend search_path  	"../lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/"
-lappend search_path  	"../lib/SAED32_EDK/lib/stdcell_rvt/verilog/"
-lappend search_path  	"../lib/SAED32_EDK/lib/stdcell_rvt/db_nldm/"
+lappend search_path  	"../../lib/SAED32_EDK/lib/io_std/verilog/"
+lappend search_path  	"../../lib/SAED32_EDK/lib/io_std/db_nldm/"
+lappend search_path  	"../../lib/SAED32_EDK/lib/stdcell_hvt/verilog/"
+lappend search_path  	"../../lib/SAED32_EDK/lib/stdcell_hvt/db_nldm/"
+lappend search_path  	"../../lib/SAED32_EDK/lib/stdcell_rvt/verilog/"
+lappend search_path  	"../../lib/SAED32_EDK/lib/stdcell_rvt/db_nldm/"
 
 # Cell library
 set target_library     	"saed32hvt_tt1p05v25c.db  saed32rvt_tt1p05v25c.db"

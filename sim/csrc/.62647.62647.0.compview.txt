@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1774164044.912400004, "rt":4.99, "ut":0.07, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1774164044.495424789}
+{"VCS_COMP_START_TIME": 1774164044.495424789}
+{"VCS_COMP_END_TIME": 1774164049.922494307}
+{"VCS_USER_OPTIONS": "-full64 -debug_access+all -line +vcsd +vpi +plusarg_save -Mupdate +error+10 +v2k +ntb_exit_on_error=10 -timescale=1ns/100ps -negdelay +neg_tchk +memcbk +sdfverbose +warn=all +warn=noTFIPC +nospecify +warn=noWSUM -l vcs.log -f /home/host/DFT_Project/AES_full_piplined/flist.f"}

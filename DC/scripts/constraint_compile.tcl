@@ -23,9 +23,9 @@ set remove_tie_dont_use_switch [getenv remove_tie_dont_use_switch]
 
 # Define some variables for design -- {aes_ASIC}
 #****************************************************
-set TOP_MODULE		aes_ASIC
-set Rst_list		[list PAD_wb_rst_i]
-set Clk_list		[list PAD_wb_clk_i]
+set TOP_MODULE	aes_ASIC_new
+set Rst_list		[list PAD_rst_n]
+set Clk_list		[list PAD_clk]
 
 set_svf 	${svfDir}/${TOP_MODULE}.svf
 
@@ -78,12 +78,16 @@ current_design $TOP_MODULE
 
 #should use pins? Can PAD_* be used?
 
-create_clock -name wb_clk -period $SYS_CLK_PERIOD -waveform [list 0 [expr $SYS_CLK_PERIOD /2]]  [get_ports PAD_wb_clk_i]
+create_clock -name sys_clk -period $SYS_CLK_PERIOD -waveform [list 0 [expr $SYS_CLK_PERIOD /2]]  [get_ports PAD_clk]
 
+#create_generated_clock -name clk_new -source [get_ports clk] -edges {9 17 26 34 43} [get_ports clk_new]
+
+
+#Set_clk_network_and_dont_touch_network
 set_dont_touch_network  [all_clocks]
-#wb_clk
-set_ideal_network [get_pins "wb_clk_i_0/DOUT"]
+set_ideal_network [get_pins "clk_0/DOUT"]
 
+#Set_rst_network_and_dont_touch_network
 set_dont_touch_network  [get_ports "$Rst_list"]
 set_ideal_network [get_ports "$Rst_list"]
 
@@ -130,14 +134,14 @@ set_max_transition 1.0 $TOP_MODULE
 #output delay : max : setup
 #output delay : min : -hold
 
-set wb_in_ports [remove_from_collection [all_inputs]  [get_ports [list PAD_wb_clk_i PAD_wb_rst_i]]]
-set wb_out_ports [get_ports [list PAD_wb_dat_o PAD_wb_ack_o]]
+set AES_in_ports [remove_from_collection [all_inputs]  [get_ports "$Rst_list $Clk_list"]]
+set AES_out_ports [remove_from_collection [all_outputs] [get_ports clk_new]]
 
-set_input_delay -max 5 -clock wb_clk $wb_in_ports
-set_input_delay -min 0.1 -clock wb_clk $wb_in_ports
+set_input_delay -max 5 -clock sys_clk $AES_in_ports
+set_input_delay -min 0.1 -clock sys_clk $AES_in_ports
 
-set_output_delay -max 5 -clock wb_clk $wb_out_ports
-set_output_delay -min -1 -clock wb_clk $wb_out_ports
+set_output_delay -max 5 -clock  sys_clk $AES_out_ports
+set_output_delay -min -1 -clock sys_clk $AES_out_ports
 
 #exit
 
@@ -145,6 +149,8 @@ set_output_delay -min -1 -clock wb_clk $wb_out_ports
 #****************************************************
 # false path
 #****************************************************
+
+
 #set_case_analysis is enough?
 set_false_path -from [get_ports "$Rst_list"]
 
@@ -152,7 +158,8 @@ set_false_path -from [get_ports "$Rst_list"]
 #****************************************************
 # case_analysis
 #****************************************************
-set_case_analysis 0 [get_pins "wb_rst_i_0/DOUT"]
+set_case_analysis 1 [get_ports "$Rst_list"]
+
 
 #****************************************************
 # area and power
@@ -221,6 +228,8 @@ report_area -nosplit >  ${reportsDir}/${TOP_MODULE}.area.txt
 report_power -nosplit > ${reportsDir}/${TOP_MODULE}.power.txt
 report_timing -to [all_registers -data_pins] > ${reportsDir}/${TOP_MODULE}.timing.regist,txt
 report_timing -to [all_outputs]  > ${reportsDir}/${TOP_MODULE}.timing.all_out.txt
+report_reference -hierarchy -nosplit \
+    > ${reportsDir}/${TOP_MODULE}.cell_usage.txt
 #****************************************************
 #  Change Naming Rule
 #****************************************************

@@ -1,0 +1,26 @@
+Command: /home/host/DFT_Project/AES_full_piplined/sim/./simv +vcs+lic+wait -l ./simv.log
+Chronologic VCS simulator copyright 1991-2022
+Contains Synopsys proprietary information.
+Compiler version T-2022.06_Full64; Runtime version T-2022.06_Full64;  Mar 22 01:27 2026
+*Verdi* Loading libsscore_vcs202206.so
+FSDB Dumper for VCS, Release Verdi_T-2022.06, Linux x86_64/64bit, 05/29/2022
+(C) 1996 - 2022 by Synopsys, Inc.
+*Verdi* : Create FSDB file 'tb.fsdb'
+*Verdi* : Begin traversing the scope (aes_top_tb), layer (0).
+*Verdi* : End of traversing.
+Test 0: Passed, Expected 69c4e0d86a7b0430d8cdb78070b4c55a, Actual 69c4e0d86a7b0430d8cdb78070b4c55a
+Test 1: Passed, Expected eb7db34352d001fe483bddb27e9349a1, Actual eb7db34352d001fe483bddb27e9349a1
+Test 2: Passed, Expected 67d455bea9e118bd8425eaf27bc08933, Actual 67d455bea9e118bd8425eaf27bc08933
+Test 3: Passed, Expected 5fe2c1898df6a83b9b061c589357f587, Actual 5fe2c1898df6a83b9b061c589357f587
+Test 4: Passed, Expected 965c2dba77ff86a316199702c7c36728, Actual 965c2dba77ff86a316199702c7c36728
+Test 5: Passed, Expected 5edcf52367a8f289ff6fc2a41d2752a9, Actual 5edcf52367a8f289ff6fc2a41d2752a9
+Test 6: Passed, Expected 22f0eaf54a178cf157514dcf83673862, Actual 22f0eaf54a178cf157514dcf83673862
+Test 7: Passed, Expected 6a1ce927be8ea92bcf185f4370c29087, Actual 6a1ce927be8ea92bcf185f4370c29087
+Test 8: Passed, Expected 2f1043780796ac3b4332e5e09460f327, Actual 2f1043780796ac3b4332e5e09460f327
+Test 9: Passed, Expected 4a5a4421892df67cd9b8af80c0b8f3b6, Actual 4a5a4421892df67cd9b8af80c0b8f3b6
+$finish called from file "../tb/tb.v", line 86.
+$finish at simulation time               505000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 505000 ps
+CPU Time:      0.540 seconds;       Data structure size:   0.1Mb
+Sun Mar 22 01:27:26 2026
